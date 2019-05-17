@@ -36,9 +36,10 @@ public class Inventory {
 
     private void addMockData() {
 
-        InventoryItem item1 = new InventoryItem("0", "soffa", "2019-12-01");
-        InventoryItem item2 = new InventoryItem("1", "bord", "2019-12-01");
-        InventoryItem item3 = new InventoryItem("2", "ost", "2019-12-01");
+        Manufacturer manufacturer = new Manufacturer("David", "www", "070-555");
+        InventoryItem item1 = new InventoryItem("0", "soffa", "2019-12-01", manufacturer);
+        InventoryItem item2 = new InventoryItem("1", "bord", "2019-12-01", manufacturer);
+        InventoryItem item3 = new InventoryItem("2", "ost", "2019-12-01", manufacturer);
 
         inventory.add(item1);
         inventory.add(item2);

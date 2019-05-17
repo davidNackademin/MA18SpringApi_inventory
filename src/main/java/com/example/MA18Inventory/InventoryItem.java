@@ -5,13 +5,20 @@ public class InventoryItem {
     private String id;
     private String name;
     private String releseDate;
+    private Manufacturer manufacturer;
+
 
     public InventoryItem() {}
 
-    public InventoryItem(String id, String name, String releseDate) {
+    public InventoryItem(String id, String name, String releseDate, Manufacturer manufacturer) {
         this.id = id;
         this.name = name;
         this.releseDate = releseDate;
+        this.manufacturer = manufacturer;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 
     public String getId() {
