@@ -29,6 +29,18 @@ public class Inventory {
         return items;
     }
 
+    public InventoryItem getInventoryItem(String id) {
+
+        for(InventoryItem item :  inventory) {
+            if (item.getId().equals(id))
+                return item;
+        }
+
+        return null;
+
+    }
+
+
     public void addItem(InventoryItem item) {
         inventory.add(item);
     }
