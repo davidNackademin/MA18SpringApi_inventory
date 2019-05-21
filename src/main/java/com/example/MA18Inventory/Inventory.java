@@ -1,5 +1,6 @@
 package com.example.MA18Inventory;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,20 +32,41 @@ public class Inventory {
 
     public InventoryItem getInventoryItem(String id) {
 
+        return findItemById(id);
+    }
+
+    public InventoryItem deleteItem(String id) {
+        InventoryItem item = findItemById(id);
+
+        inventory.remove(item);
+
+        return item;
+    }
+
+    public void addItem(InventoryItem item) {
+        inventory.add(item);
+    }
+
+
+    public void replaceItemWithId(String id, InventoryItem newItem) {
+        InventoryItem oldItem =  findItemById(id);
+
+        inventory.remove(oldItem);
+
+        newItem.setId(oldItem.getId());
+
+        inventory.add(newItem);
+
+    }
+
+    private InventoryItem findItemById(String id) {
         for(InventoryItem item :  inventory) {
             if (item.getId().equals(id))
                 return item;
         }
 
         return null;
-
     }
-
-
-    public void addItem(InventoryItem item) {
-        inventory.add(item);
-    }
-
 
     private void addMockData() {
 
